@@ -1,6 +1,6 @@
-# 50projects50days
+# 50 Projects 50 Days
 
-A collection of 50 web development projects using HTML, CSS, and JavaScript.
+A collection of 50 days of web development projects using HTML, CSS, and JavaScript.
 
 ## Projects
 
