@@ -1,3 +1,8 @@
+:root {
+  --line-border-fill: #3498db;
+  --line-border-empty: #383838;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -14,69 +19,24 @@ body {
   font: 900;
 }
 
-.circle {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  border: grey solid 4px;
-  text-align: center;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.circle.active {
-  border-color: purple;
-}
-
-.circle::before {
-  content: "";
-  position: absolute;
-  top: 50%; /*the top of the element is at the 50% mark*/
-  right: 100%;
-  width: 80px;
-  height: 5px;
-  background-color: grey;
-  transform: translateY(
-    -50%
-  ); /*move the element back up by half of its own height to center it with the whole page*/
-  width: 80px;
-}
-
-.circle.active::before {
-  background-color: purple;
-  width: 80px;
-}
-
-.circle:first-child::before {
-  display: none;
-}
-
-.btn {
-  width: 90px;
-  height: 40px;
-  border-radius: 5px;
-  border: transparent;
-  color: white;
-  font-size: 18px;
-}
-
-.btn.active {
-  background-color: purple;
-  cursor: pointer;
-}
-
-.btn.inactive {
-  background-color: grey;
-  cursor: not-allowed;
-}
-
 .circle-container {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 76px;
+  position: relative;
+}
+
+.circle-container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 5px;
+  background-color: var(--line-border-empty);
+  transition: width 0.3s ease-in-out;
+  transform: translateY(-50%);
+  z-index: -1;
 }
 
 .button-container {
@@ -90,4 +50,59 @@ body {
   display: flex;
   flex-direction: column;
   gap: 40px;
+}
+
+
+.circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: var(--line-border-empty) solid 4px;
+  text-align: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: border-color 0.3s ease-in-out;
+  background-color: white;
+}
+
+.circle.active {
+  border-color: var(--line-border-fill);
+}
+
+.progress-line {
+  position: absolute;
+  top: 50%;
+  width: 0%;
+  left: 0;
+  height: 5px;
+  background-color: var(--line-border-fill);
+  transition: width 0.3s ease-in-out;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+.btn {
+  width: 90px;
+  height: 40px;
+  border-radius: 5px;
+  border: transparent;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: var(--line-border-fill);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+.btn:disabled {
+  background-color: var(--line-border-empty);
+  cursor: not-allowed;
 }

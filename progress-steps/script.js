@@ -1,62 +1,50 @@
 const prevButton = document.getElementById("btn-prev");
 const nextButton = document.getElementById("btn-next");
-const inactiveButton = document.querySelector(".btn.inactive");
+const circles = document.querySelectorAll(".circle");
+const progressLine = document.querySelector(".progress-line");
 
-if (inactiveButton) {
-  inactiveButton.disabled = true;
-}
-let ind = 0;
+let currentActive = 1;
 
-prevButton.addEventListener("click", (event) => {
-  nextButton.disabled = false;
-  nextButton.classList.remove("inactive");
-  nextButton.classList.add("active");
+nextButton.addEventListener("click", () => {
+  currentActive++;
 
-  if (ind > 0) {
-    ind -= 1;
+  if (currentActive > circles.length) {
+    currentActive = circles.length;
   }
 
-  // Remove all active classes
-  document
-    .querySelectorAll(".circle")
-    .forEach((circle) => circle.classList.remove("active"));
+  update();
+});
 
-  for (let i = 0; i <= ind; i++) {
-    document
-      .querySelector(`.circle:nth-child(${i + 1})`)
-      .classList.add("active");
+prevButton.addEventListener("click", () => {
+  currentActive--;
+
+  if (currentActive < 1) {
+    currentActive = 1;
   }
 
-  if (ind === 0) {
-    prevButton.classList.remove("active");
-    prevButton.classList.add("inactive");
+  update();
+});
+
+const update = () => {
+  circles.forEach((circle, idx) => {
+    if (idx < currentActive) {
+      circle.classList.add("active");
+    } else {
+      circle.classList.remove("active");
+    }
+  });
+
+  const actives = document.querySelectorAll(".active");
+
+  progressLine.style.width =
+    ((actives.length - 1) / (circles.length - 1)) * 100 + "%";
+
+  if (currentActive === 1) {
     prevButton.disabled = true;
-  }
-});
-
-nextButton.addEventListener("click", (event) => {
-  prevButton.disabled = false;
-  prevButton.classList.remove("inactive");
-  prevButton.classList.add("active");
-
-  if (ind < 3) {
-    ind += 1;
-  }
-
-  // Remove all active classes
-  document
-    .querySelectorAll(".circle")
-    .forEach((circle) => circle.classList.remove("active"));
-
-  for (let i = 0; i <= ind; i++) {
-    document
-      .querySelector(`.circle:nth-child(${i + 1})`)
-      .classList.add("active");
-  }
-
-  if (ind === 3) {
-    nextButton.classList.remove("active");
-    nextButton.classList.add("inactive");
+  } else if (currentActive === circles.length) {
     nextButton.disabled = true;
+  } else {
+    prevButton.disabled = false;
+    nextButton.disabled = false;
   }
-});
+};
