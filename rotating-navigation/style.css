@@ -1,0 +1,114 @@
+:root {
+    --beneath-color: #3b3b3b;
+    --shell-menu-color: #f77077df;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    font-family:monospace;
+    overflow: hidden;
+}
+
+.nav-container {
+    background-color: var(--beneath-color);
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    z-index: -1;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    bottom: 200px;
+    position: absolute; /*z-index works with position or flex items*/
+    z-index: -1;
+    font-size: 18pt;
+}
+
+.navicon {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.navbar a{
+    text-decoration: none;
+    color: white;
+}
+
+.navbar a:nth-child(1) {
+    margin-left: 20px;
+}
+
+.navbar a:nth-child(2) {
+    margin-left: 40px;
+}
+
+.navbar a:nth-child(3) {
+    margin-left: 60px;
+}
+
+#shell-menu {
+    background-color: var(--shell-menu-color);
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-right-radius: 100%;
+    z-index: 2;
+    position:absolute;
+}
+
+.menu-btn {
+    border: 0;
+    background-color: transparent;
+    transition: 1s;
+}
+
+.btnicon {
+    width: 30px;
+    height: 30px;
+    transform: translateX(-50%);
+}
+
+#menu-on{
+    display: none;
+}
+
+.main-container {
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding:5% 20%;
+}
+
+
+
+h1 {
+    padding: 0;
+    margin: 0;
+}
+
+#author {
+    color: grey;
+    font-style: italic;
+    font-size: 10pt
+}
+
+.main-container > p {
+    font-size: 16px;
+    /* line-height: 18pt; */
+}
