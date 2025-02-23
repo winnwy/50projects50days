@@ -6,17 +6,14 @@ const navbar = document.querySelector(".navbar");
 
 btn_off.addEventListener("click", () => {
     btn_on.style.display = "block";
-    btn_off.style.display = "None";
-    main_container.style.transform = "Rotate(-20deg)";
-    navbar.style.transform = "translateX(0%)";
-    // btn_off.style.transformOrigin = "top left";
-    // btn_off.style.transform = "Rotate(20deg)"
+    btn_off.style.display = "none";
+    navbar.classList.add("show-navbar")
+    main_container.classList.add("show-navbar")
 })
 
 btn_on.addEventListener("click", ()=> {
     btn_off.style.display = "block";
-    btn_on.style.display="None";
-    main_container.style.transform = "Rotate(0deg)"
-    navbar.style.transform = "translateX(-100%)";
-    console.log(navbar)
+    btn_on.style.display="none";
+    navbar.classList.remove("show-navbar")
+    main_container.classList.remove("show-navbar")
 })
