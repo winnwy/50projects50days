@@ -1,6 +1,6 @@
 :root {
     --beneath-color: #3b3b3b;
-    --shell-menu-color: #f77077df;
+    --circle-color: #f77077df;
 }
 
 * {
@@ -65,33 +65,47 @@ body {
     transform: translateX(-300%);
 }
 
-#shell-menu {
-    background-color: var(--shell-menu-color);
-    width: 100px;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom-right-radius: 100%;
+.circle-container {
+    position: fixed;
+    top: -100px;
+    left: -100px;
     z-index: 2;
-    position:absolute;
 }
 
-.menu-btn {
-    border: 0;
-    background-color: transparent;
-    transition: 1s;
+.circle {
+    background-color: var(--circle-color);
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    position: relative;
+    transition: transform 0.5s linear;
+    z-index: 2;
 }
+
+.circle button {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: transparent;
+    border: 0;
+    padding: 10px;
+  }
+
+  .circle button#menu-on {
+    transform-origin: top left;
+    transform: rotate(90deg);
+  }
+  
+  .show-navbar.circle {
+    transform: rotate(-90deg);
+  }
 
 .btnicon {
-    width: 30px;
-    height: 30px;
-    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
 }
 
-#menu-on{
-    display: none;
-}
 
 .main-container {
     background-color: white;
