@@ -8,7 +8,7 @@ A collection of 50 days of web development projects using HTML, CSS, and JavaScr
 |-----|--------------|-----------|
 | 01 | Expanding Cards | [Live Demo](https://winnwy.github.io/50projects50days/expanding-cards/) |
 | 02 | Progress Steps | [Live Demo](https://winnwy.github.io/50projects50days/progress-steps/) |
-| 03 | Rotating Navigation | [Live Demo]() |
+| 03 | Rotating Navigation | [Live Demo](https://winnwy.github.io/50projects50days/rotating-navigation/) |
 | 04 | Hidden Search Widget | [Live Demo]() |
 | 05 | Blurry Loading | [Live Demo]() |
 | 06 | Scroll Animation | [Live Demo]() |
