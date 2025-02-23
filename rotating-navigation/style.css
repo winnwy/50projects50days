@@ -1,141 +1,138 @@
 :root {
-    --beneath-color: #3b3b3b;
-    --circle-color: #f77077df;
+  --beneath-color: #3b3b3b;
+  --circle-color: #f77077df;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    width: 100vw;
-    background-color: black;
-    font-family:monospace;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  background-color: black;
+  font-family: monospace;
 }
 
 .nav-container {
-    background-color: var(--beneath-color);
-    width: 100%;
-    height: 100%;
-    position: fixed;
+  background-color: var(--beneath-color);
+  width: 100%;
+  height: 100%;
+  position: fixed;
 }
 
 .navbar {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 30px;
-    bottom: 15%;
-    position: absolute; /*z-index works with position or flex items*/
-    z-index: -1;
-    font-size: 18pt;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  bottom: 15%;
+  position: absolute; /*z-index works with position or flex items*/
+  z-index: -1;
+  font-size: 18pt;
 }
 
 .navicon {
-    width: 20px;
-    margin-right: 10px;
+  width: 20px;
+  margin-right: 10px;
 }
 
-.navbar a{
-    text-decoration: none;
-    color: white;
-    position: relative;
-    transition: transform 1s ease-in-out;
+.navbar a {
+  text-decoration: none;
+  color: white;
+  position: relative;
+  transition: transform 1s ease-in-out;
 }
 
-.navbar.show-navbar>a:nth-child(n){
-    transform: translateX(0%);
-    transition: transform 1s ease-in-out;
+.navbar.show-navbar > a:nth-child(n) {
+  transform: translateX(0%);
+  transition: transform 1s ease-in-out;
 }
 
 .navbar a:nth-child(1) {
-    margin-left: 20px;
-    transform: translateX(-100%);
+  margin-left: 20px;
+  transform: translateX(-100%);
 }
 
 .navbar a:nth-child(2) {
-    margin-left: 40px;
-    transform: translateX(-200%);
+  margin-left: 40px;
+  transform: translateX(-200%);
 }
 
 .navbar a:nth-child(3) {
-    margin-left: 60px;
-    transform: translateX(-300%);
+  margin-left: 60px;
+  transform: translateX(-300%);
 }
 
 .circle-container {
-    position: fixed;
-    top: -100px;
-    left: -100px;
-    z-index: 2;
+  position: fixed;
+  top: -100px;
+  left: -100px;
+  z-index: 2;
 }
 
 .circle {
-    background-color: var(--circle-color);
-    height: 200px;
-    width: 200px;
-    border-radius: 100%;
-    position: relative;
-    transition: transform 0.5s linear;
-    z-index: 2;
+  background-color: var(--circle-color);
+  height: 200px;
+  width: 200px;
+  border-radius: 100%;
+  position: relative;
+  transition: transform 0.5s linear;
+  z-index: 2;
 }
 
 .circle button {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    background: transparent;
-    border: 0;
-    padding: 10px;
-  }
-
-  .circle button#menu-on {
-    transform-origin: top left;
-    transform: rotate(90deg);
-  }
-  
-  .show-navbar.circle {
-    transform: rotate(-90deg);
-  }
-
-.btnicon {
-    width: 50px;
-    height: 50px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: transparent;
+  border: 0;
+  padding: 10px;
 }
 
+.circle button#menu-on {
+  transform-origin: top left;
+  transform: rotate(90deg);
+}
+
+.show-navbar.circle {
+  transform: rotate(-90deg);
+}
+
+.btnicon {
+  width: 50px;
+  height: 50px;
+}
 
 .main-container {
-    background-color: white;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    padding:5% 20%;
-    transform-origin: top left;
-    position: relative;
-    transition: 1s;
-    transform: Rotate(0deg);
+  background-color: white;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  padding: 5% 20%;
+  transform-origin: top left;
+  position: relative;
+  transition: 1s;
+  transform: Rotate(0deg);
 }
 
 .main-container.show-navbar {
-    transform: Rotate(-20deg);
+  transform: Rotate(-20deg);
 }
 
-
-
 h1 {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 #author {
-    color: grey;
-    font-style: italic;
-    font-size: 10pt
+  color: grey;
+  font-style: italic;
+  font-size: 10pt;
 }
 
 .main-container > p {
-    font-size: 16px;
+  font-size: 16px;
 }
