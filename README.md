@@ -10,7 +10,7 @@ A collection of 50 days of web development projects using HTML, CSS, and JavaScr
 | 02 | Progress Steps | [Live Demo](https://winnwy.github.io/50projects50days/progress-steps/) |
 | 03 | Rotating Navigation | [Live Demo](https://winnwy.github.io/50projects50days/rotating-navigation/) |
 | 04 | Hidden Search Widget | [Live Demo](https://winnwy.github.io/50projects50days/hidden-search-widget/) |
-| 05 | Blurry Loading | [Live Demo]() |
+| 05 | Blurry Loading | [Live Demo](https://winnwy.github.io/50projects50days/blurry-loading/) |
 | 06 | Scroll Animation | [Live Demo]() |
 | 07 | Split Landing Page | [Live Demo]() |
 | 08 | Form Wave Animation | [Live Demo]() |
